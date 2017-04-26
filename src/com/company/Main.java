@@ -9,9 +9,10 @@ public class Main {
         biblioteka.dodajemyKsiazke();
         biblioteka.dodajemyKsiazke();
 
+
         biblioteka.wypozyczamyKsiazke();
 
-        System.out.println(biblioteka.iloscKsiazek);
+        System.out.println("Ilosc ksiazek w bibliotece: " + biblioteka.iloscKsiazek);
 
 
     }

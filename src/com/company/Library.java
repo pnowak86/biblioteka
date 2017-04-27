@@ -1,38 +1,56 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by RENT on 2017-04-26.
  */
 public class Library {
-    int iloscKsiazek;
-    String[] polki = new String;
+
+    //private Book book;
+    //private Integer[] myInts = new Integer[10];
 
 
-    public int dodajemyKsiazke() {
-        Book nowaKsiazka = new Book("Sienkiewicz", "Ogniem i Mieczem");
-        iloscKsiazek = iloscKsiazek + 1;
+    List<Book> allBooks = new ArrayList<>();
 
-        String[] polki = new String;
-        if (iloscKsiazek>1)
-        {
-         while()
-        }
 
-        return iloscKsiazek;
-
-        // public static void wyswietlKsiazki()
-        // {
-        //    System.out.println(nowaKsiazka);
-        //  }
-
-        //if(iloscKsiazek>0)
-        //System.out.println(nowaKsiazka);
+    Library(List<Book> acquiredBooks) {
+        allBooks.addAll(acquiredBooks);
     }
 
-    public int wypozyczamyKsiazke() {
-        iloscKsiazek = iloscKsiazek - 1;
-        return iloscKsiazek;
 
+    public void addBook(Book book) {
+        allBooks.add(book);
     }
+
+    public void deleteBook(Book book) {
+        allBooks.remove(book);
+    }
+
+    public void deleteBook(String bookTitle){
+
+    boolean isBookToDelete = false;
+    int idx = 0;
+    Book book = null;
+
+            while(isBookToDelete == false)
+    {
+        book = allBooks.get(idx);
+        isBookToDelete = book.getTitle().equals(bookTitle);
+        idx++;
+    }
+
+
+
+   if (isBookToDelete == true)
+       allBooks.remove(book);
+        System.out.println("removed book: " + book.getTitle());
+        //for (int i = 0; i < allBooks.size(); i++) {
+        //Book book =  allBooks.get(i);
+        // boolean isBookToDelete = book.getTitle().equals(bookTitle)
 
 }
+    }
+
+

@@ -1,18 +1,37 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
-        Library biblioteka = new Library();
 
-        biblioteka.dodajemyKsiazke();
-        biblioteka.dodajemyKsiazke();
-        biblioteka.dodajemyKsiazke();
+        Book book1 = new Book("Pan Tadeusz");
+        Book book2 = new Book("Matrix");
+        Book book3 = new Book("Ogniem i mieczem");
 
 
-        biblioteka.wypozyczamyKsiazke();
+        List<Book> booksForLibrary = new ArrayList<>();
+        booksForLibrary.add(book1);
+        booksForLibrary.add(book2);
+        booksForLibrary.add(book3);
 
-        System.out.println("Ilosc ksiazek w bibliotece: " + biblioteka.iloscKsiazek);
+
+
+        Library library = new Library(booksForLibrary);
+
+
+        // library.addBook(book1);
+        // library.addBook(book1);
+        //library.addBook(book1);
+        //System.out.println(library.allBooks.size());
+        library.deleteBook(book2);
+        library.deleteBook("Pan Tadeusz");
+
+        System.out.println(",,, " + library.allBooks.size());
+
+        //System.out.println(book2.getTitle());
 
 
     }

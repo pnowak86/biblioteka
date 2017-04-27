@@ -35,5 +35,6 @@ public class Main {
 
         //System.out.println(book2.getTitle());
         //dodac 2 razy ta sama ksiazke, dzialac na duplikatach, sprawdzic czy usuwamy tylko duplikaty
+        //usuwanie ksiazki w przypadku duplikatow
     }
 }

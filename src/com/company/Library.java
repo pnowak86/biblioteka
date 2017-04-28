@@ -20,11 +20,23 @@ public class Library {
     }
 
     public Book borrow(String title) {
-        return searchBookByTitle(title);
+        return searchBook(title);
     }
 
-    public boolean returnBook(Book bookToReturn){
-        return false;
+
+    //public boolean isBookBorrowed()
+
+    public boolean returnBook(Book bookToReturn) {
+        //searchBook(bookToReturn.getTitle());
+        boolean result = false;
+        Book bookFound = searchBook(bookToReturn);
+        if (bookFound != null) {
+            //boolean result = bookToReturn.getTitle().equals(bookFound.getTitle());
+            //result = bookToReturn == bookFound;
+            result = bookFound.equals(bookToReturn);
+        }
+
+        return result;
     }
 
 
@@ -38,12 +50,18 @@ public class Library {
 
     public void deleteBook(String bookTitle) {
 
-        Book bookFound = searchBookByTitle(bookTitle);
+        Book bookFound = searchBook(bookTitle);
         if (bookFound != null)
             allBooks.remove(bookFound);
     }
 
-    public Book searchBookByTitle(String title) {
+    public Book searchBook(Book book) {
+        System.out.println("dasds");
+        return searchBook(book.getTitle());
+    }
+
+
+    public Book searchBook(String title) {
 
 
         boolean isBookFound = false;
